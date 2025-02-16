@@ -1,5 +1,7 @@
 # Test concurrent code in Rust with Loom
 
+This material is part of my talk at the Rust Tbilisi kickoff [meetup](https://www.meetup.com/tbilisi-rustaceans/events/297231022) (18.11.2023) .
+
 ## Description of the Problem
 
 Five philosophers dine together at the same table. Each philosopher has their own place at the table, and there is a fork between each plate. The dish served is a kind of spaghetti that must be eaten with two forks.
