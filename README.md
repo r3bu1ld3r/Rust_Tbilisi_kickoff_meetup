@@ -6,6 +6,7 @@ This is the classic Dining Philosophers problem:
 Five philosophers dine together at the same table. Each philosopher has their own place at the table, and there is a fork between each plate. The dish served is a kind of spaghetti that must be eaten with two forks.
 Each philosopher can only alternate between thinking and eating. Moreover, a philosopher can only eat their spaghetti when they have both a left and a right fork. Thus, two forks will only be available when their two nearest neighbors are thinking rather than eating. After an individual philosopher finishes eating, they put down both forks.
 
+![Description](./assets/description.webp)
 The challenge of this problem arises from the need to manage concurrent access to the limited resources (the forks) while avoiding deadlock (where no progress is made because all philosophers are waiting indefinitely to acquire forks) and starvation (where a philosopher never gets to eat because others always take precedence).
 
 ## Description of the Solution
