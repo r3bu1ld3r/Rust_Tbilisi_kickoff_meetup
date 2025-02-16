@@ -2,7 +2,6 @@
 
 ## Description of the Problem
 
-This is the classic Dining Philosophers problem:
 Five philosophers dine together at the same table. Each philosopher has their own place at the table, and there is a fork between each plate. The dish served is a kind of spaghetti that must be eaten with two forks.
 Each philosopher can only alternate between thinking and eating. Moreover, a philosopher can only eat their spaghetti when they have both a left and a right fork. Thus, two forks will only be available when their two nearest neighbors are thinking rather than eating. After an individual philosopher finishes eating, they put down both forks.
 
