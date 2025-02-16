@@ -32,12 +32,15 @@ To run the tests using `loom`, ensuring thread safety and the absence of deadloc
 You can run the tests with `loom` by enabling the `loom` configuration:
  - For triggering a bug:
 ```bash
-LOOM_MAX_PREEMPTIONS=2 RUSTFLAGS="--cfg loom" cargo test -r -- --exact trigger_deadlock_with_loom --nocapture
+LOOM_LOG=info LOOM_MAX_PREEMPTIONS=2 RUSTFLAGS="--cfg loom" cargo test -r -- --exact trigger_deadlock_with_loom --nocapture
 ```
 - For running without a bug:
 ```bash
-LOOM_MAX_PREEMPTIONS=2 RUSTFLAGS="--cfg loom" cargo test -r -- --exact run_correct_solution_with_loom --nocapture
+LOOM_LOG=info LOOM_MAX_PREEMPTIONS=2 RUSTFLAGS="--cfg loom" cargo test -r -- --exact run_correct_solution_with_loom --nocapture
 ```
 
+Notes:
+
 When running with `loom`, the code is tested with reduced iterations (10 instead of 100) because `loom` performs an exhaustive exploration of all possible thread interleavings. This reduction is necessary since the exhaustive checking provided by `loom` can become computationally expensive with higher iteration counts.
-Additionally, the number of philosophers is reduced to 3 instead of 5 to further simplify the concurrency scenario, thereby limiting the state space and ensuring that `loom` can effectively analyze all interleavings. LOOM_MAX_PREEMPTIONS=2 is also used to cap the number of preemptions, which controls the number of interleavings and makes the thorough testing by `loom` practical and efficient.
+
+Additionally, the number of philosophers is reduced to 3 instead of 5 to further simplify the concurrency scenario, thereby limiting the state space and ensuring that `loom` can effectively analyze all interleavings. `LOOM_MAX_PREEMPTIONS=2` is also used to cap the number of preemptions, which controls the number of interleavings and makes the thorough testing by `loom` practical and efficient.
