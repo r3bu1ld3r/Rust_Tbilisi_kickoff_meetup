@@ -20,7 +20,7 @@ This implementation of the Dining Philosophers problem provides two solutions:
    - The deadlock-free solution introduces a break in symmetry. Specifically, one philosopher (the last in the seating arrangement) switches the order in which they pick up the forks. Instead of picking up the left fork first, then the right fork, they take the right fork first and then the left fork.
    - By doing this, the circular wait condition necessary for deadlock is prevented, allowing the program to run indefinitely without freezing.
 
-Both solutions are tested using [`loom`], a tool in Rust to check for concurrency issues. `loom` allows you to test all possible interleavings of threads, ensuring the robustness of concurrent algorithms.
+Both solutions are tested using [Loom](https://github.com/tokio-rs/loom), a tool in Rust to check for concurrency issues. `loom` allows you to test all possible interleavings of threads, ensuring the robustness of concurrent algorithms.
 
 ## How to Run the Tests with Loom Enabled
 

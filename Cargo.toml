@@ -2,12 +2,10 @@
 name = "concurrency_testing"
 version = "0.1.0"
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+authors = ["Anton Velikanov <a.velikanov.jobs@gmail.com>"]
 
 [dependencies]
 loom = "0.7.1"
-
 
 [target.'cfg(loom)'.dependencies]
 loom = "0.7.1"
